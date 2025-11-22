@@ -3,7 +3,7 @@ services:
     image: nginx:latest
     container_name: reverse-proxy
     ports:
-      - "80:80"
+      - "8555:8555"
     networks:
       - frontend_net
       - public_net
