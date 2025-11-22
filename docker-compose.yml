@@ -1,9 +1,11 @@
 services:
-  nginx:
+  web-reverse-proxy:
     image: nginx:latest
-    container_name: reverse-proxy
+    container_name: web-reverse-proxy
     ports:
       - "8555:8555"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
       - frontend_net
       - public_net
