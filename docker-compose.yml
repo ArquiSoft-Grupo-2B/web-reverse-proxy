@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: reverse-proxy
+    ports:
+      - "80:80"
+    networks:
+      - frontend_net
+      - public_net
+
+networks:
+  public_net:
+    external: true
+  frontend_net:
+    external: true
